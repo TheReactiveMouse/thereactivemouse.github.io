@@ -1,0 +1,49 @@
+<title>How to open relay.</title>
+h1>How to open relay?</h1>
+<br>
+<i>You need have to do this successfully :</i>
+<ul>
+	<li>1. Windows Server, minimal 1GB RAM For correct work.</li>
+    <li>2. Static IP, allowed using NOIP or another dynamic DNS.</li>
+    <li>3. Google DNS</li>
+    <li>4. mouseTor Certificate (How to made i will be show in instruction.)</li>
+    </ul>
+<br>
+<h2>Part 1, Windows Server.</h2>
+<p>For correct work you need have a Windows Server</p>
+<p>If you have this, part 1 is complete.</p>
+<h2>Part 2, Static IP, Dynamic DNS.</h2>
+<p>If you have an any static ip(non local, but in local network it's will work.)</p>
+<p>or you connected Dynamic DNS.After connecting DDNS/Static IP you need configure Virtual Servers.</p>
+<p>You need open for your server port 80(HTTP) or 443 for SSL</p>
+<p>At Windows Server you need configure Firewall to accept 80 port connections.</p>
+<p>After this, you can start your own mouseTor Web Site relay.You need start NGINX/APACHE for this.</p>
+<h2>Part 3, Google DNS</h2>
+<p>Google DNS Servers is required for server, if you want have a high speed of connections and fast MX/NS Records update.</p>
+<h2>4. mouseTor Certificate</h2>
+<p>If you started relay and all okay, you need configure files.</p>
+<ul>
+	<li>Create file certificate.ttp(For your certificate at server.)</li>
+    <li>Create file config.dns(For relay correctly work.)</li>
+</ul>
+<br>
+<p>Write to config.dns your first record</p>
+<font color="blue">
+	<p>test.monion *server ip.*</p>
+</font>
+and if you have a more files then index.html or another file.
+<font color="blue">
+	<p>test.monion/filename *server ip/filename</p>
+</font>
+<p>For certificate you need have a base64 record, create it at site <a href="https://www.base64encode.net/">base64encode.net</a></p>
+<p>After creating file you need say about created certificate to 🐀Mouse🐀#2870 and him will add for you your certificate if him is looks like valid.</p>
+<br>
+<h3>How to create a correct certificate?</h3>
+<p>You need encode text to base64, text need look like this AU29AMFGI99A99209AJFMG89AM29</p>
+For example
+<font color="green">
+AU29AMFGI99A99209AJFMG89AM29 -> QVUyOUFNRkdJOTlBOTkyMDlBSkZNRzg5QU0yOQ== (VALID!)
+</font>
+<br>
+<p>After mouse added your certificate to valid at official certificate center, you can add record to your relay.Write valid record to certificate.ttp</p>
+<p>In config.dns you can add any count of records, 1 million or 10 millions, no limits, if you will have a empty config.dns file, all sites will unavailable from mouseTor Client.</p>
