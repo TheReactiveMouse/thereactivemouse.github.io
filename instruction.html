@@ -1,49 +1,50 @@
-<title>How to open relay.</title>
-h1>How to open relay?</h1>
+<title>How to open a custom relay.</title>
+<h1>How to open a relay?</h1>
 <br>
-<i>You need have to do this successfully :</i>
+<i>You need <b>this</b> for it to work:</i>
 <ul>
-	<li>1. Windows Server, minimal 1GB RAM For correct work.</li>
-    <li>2. Static IP, allowed using NOIP or another dynamic DNS.</li>
+	<li>1. Windows Server, atleast 1GB RAM for correct work.</li>
+    <li>2. Static IP, you can use NOIP or another dynamic DNS.</li>
     <li>3. Google DNS</li>
-    <li>4. mouseTor Certificate (How to made i will be show in instruction.)</li>
+    <li>4. mouseTor Certificate (Instruction on how to get one will be later on this page)</li>
     </ul>
 <br>
-<h2>Part 1, Windows Server.</h2>
-<p>For correct work you need have a Windows Server</p>
+<h2>Part 1: Windows Server.</h2>
+<p>For correct work you need to have a Windows Server OS</p>
 <p>If you have this, part 1 is complete.</p>
-<h2>Part 2, Static IP, Dynamic DNS.</h2>
-<p>If you have an any static ip(non local, but in local network it's will work.)</p>
-<p>or you connected Dynamic DNS.After connecting DDNS/Static IP you need configure Virtual Servers.</p>
-<p>You need open for your server port 80(HTTP) or 443 for SSL</p>
-<p>At Windows Server you need configure Firewall to accept 80 port connections.</p>
-<p>After this, you can start your own mouseTor Web Site relay.You need start NGINX/APACHE for this.</p>
-<h2>Part 3, Google DNS</h2>
-<p>Google DNS Servers is required for server, if you want have a high speed of connections and fast MX/NS Records update.</p>
+<h2>Part 2: Static IP, Dynamic DNS.</h2>
+<p>If you have any static IPs (non local, but in local network it will work.)</p>
+<p>or you have connected Dynamic DNS: After connecting DDNS/Static IP you will need to configure Virtual Servers.</p>
+<p>You need to open Port 80 for your server or Port 443 for SSL</p>
+<p>At Windows Server you need to configure the Firewall to accept connections to Port 80.</p>
+<p>After this, you can start your own mouseTor Website relay. You need to start NGINX/APACHE for this.</p>
+<h2>Part 3: Google DNS</h2>
+<p>Google DNS Servers are required for a server if you want to have high speed connections and fast MX/NS Records update.</p>
 <h2>4. mouseTor Certificate</h2>
-<p>If you started relay and all okay, you need configure files.</p>
+<p>If you have started a relay and everything is okay, you need configure some files.</p>
 <ul>
-	<li>Create file certificate.ttp(For your certificate at server.)</li>
-    <li>Create file config.dns(For relay correctly work.)</li>
+	<li>Create a file <b>certificate.ttp</b> (For your certificate at the server)</li>
+    <li>Create a file <b>config.dns</b> (For relay to correctly work.)</li>
 </ul>
 <br>
+
 <p>Write to config.dns your first record</p>
 <font color="blue">
-	<p>test.monion *server ip.*</p>
+	<p>test.monion <b>[SERVER IP]</b></p>
 </font>
-and if you have a more files then index.html or another file.
+and if you have more files, then add index.html or another file.
 <font color="blue">
-	<p>test.monion/filename *server ip/filename</p>
+	<p>test.monion/filename <b>[SERVER IP]</b>/filename</p>
 </font>
-<p>For certificate you need have a base64 record, create it at site <a href="https://www.base64encode.net/">base64encode.net</a></p>
-<p>After creating file you need say about created certificate to 🐀Mouse🐀#2870 and him will add for you your certificate if him is looks like valid.</p>
+<p>For the certificate you need to have a base64 record, create it at <a href="https://www.base64encode.net/">base64encode.net</a></p>
+<p>After creating the file you need tell about the created certificate to 🐀Mouse🐀#2870 on Discord and he will add your certificate if the certificate looks valid.</p>
 <br>
 <h3>How to create a correct certificate?</h3>
-<p>You need encode text to base64, text need look like this AU29AMFGI99A99209AJFMG89AM29</p>
-For example
+<p>You need to encode text to base64, text needs to look like this AU29AMFGI99A99209AJFMG89AM29</p>
+For example:
 <font color="green">
 AU29AMFGI99A99209AJFMG89AM29 -> QVUyOUFNRkdJOTlBOTkyMDlBSkZNRzg5QU0yOQ== (VALID!)
 </font>
 <br>
-<p>After mouse added your certificate to valid at official certificate center, you can add record to your relay.Write valid record to certificate.ttp</p>
-<p>In config.dns you can add any count of records, 1 million or 10 millions, no limits, if you will have a empty config.dns file, all sites will unavailable from mouseTor Client.</p>
+<p>After Mouse has added your certificate to the valid list at official certificate center, you can add the record to your relay. Write the valid record to certificate.ttp</p>
+<p>In config.dns you can add any count of records, 1 million or 10 millions, no limits, but if you have an empty config.dns file, all sites will be unavailable from mouseTor Client.</p>

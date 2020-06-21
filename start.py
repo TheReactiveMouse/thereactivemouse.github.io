@@ -19,7 +19,7 @@ else:
 
     if ( requests.get(f"http://{hostname}/config.dns").status_code == 200 ):
         print(f"{time.ctime()} | Checking DNS Data base...")
-        print(f"{time.ctime()} | Checking record for main channel...")
+        print(f"{time.ctime()} | Checking the record for main channel...")
 
         if ( requests.get(f"http://{hostname}/certificate.ttp").status_code == 200 ):
             print(f"{time.ctime()} | CERTIFICATE FOUND, CHECKING VALIDALITY...")
@@ -28,11 +28,11 @@ else:
             certificate = requests.get(f"http://{hostname}/certificate.ttp").text
             data_s = base64.b64decode(certificate)
             if str(data_s.decode('utf8')) in valid_base:
-                print(f"{time.ctime()} | CERTIFICATE FOUND AND VALID! OK, RECOMMENDED WORK AT THIS RELAY! :)")
-                print("Welcome to mouseTor Browser! It's browser made to connect in mouseNET Web Sites and for own network ^-^, if you want open own relay, you need read this instruction, http://mousenet.cloudns.cl/instruction.html")
+                print(f"{time.ctime()} | CERTIFICATE FOUND AND IS VALID! RELAY STATUS: STABLE! :)")
+                print("Welcome to the mouseTor Browser! This browser is made to connect to mouseNET Web Sites and for own network ^-^, if you want to open your own relay, you will need to read this instruction: http://mousenet.tk/instruction.html")
                 while True:
                 
-                    url  = input("Enter a url.\nmousetor://")
+                    url  = input("Enter a url:\nmousetor://")
                     if ( url == "" or ' ' in url ):
                         print("BAD_URL_ERROR")
                     else:
@@ -88,9 +88,9 @@ else:
                         
 
             else:
-                print(f"{time.ctime()} | CERTIFICATE FOUND, BUT CERTIFICATE ISN'T VALID! IF YOU RELAY OWNER - REPLACE CERTIFICATE TO NEW! Or say about this to 🐀Mouse🐀#2870")
+                print(f"{time.ctime()} | CERTIFICATE FOUND, BUT CERTIFICATE ISN'T VALID! IF YOU ARE A RELAY OWNER - REPLACE THE CERTIFICATE! Or tell about this to 🐀Mouse🐀#2870 on Discord.")
                 print(F"VALID RECORD : {str(data_s.decode('utf8'))}")
         else:
-                print(f"{time.ctime()} | CERTIFICATE NOT FOUND, NOT RECOMMENDED WORK AT THIS RELAY! /!\\")
+                print(f"{time.ctime()} | CERTIFICATE NOT FOUND! RELAY STATUS: UNSTABLE! /!\\")
     else:
-        print(f"{time.ctime()} | Checking DNS Data base failed.")
+        print(f"{time.ctime()} | Checking DNS Database failed.")
