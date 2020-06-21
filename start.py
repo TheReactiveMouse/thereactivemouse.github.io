@@ -67,7 +67,7 @@ else:
                                     else:
                                         windows_x64_or_not = "64"
                                     if f'{url}/' in url:
-                                        h = {'User-Agent': f'mouseTor/{version1}.{version2}.{version3} (Windows NT {os_Version}.0; Win{windows_x64_or_not_2}; x{windows_x64_or_not}; rv:{fake_rv}.0) mouseTor Relay/A9H8G88F mouseTor/1.0.0'}
+                                        h = {'User-Agent': f'mouseTor/{version1}.{version2}.{version3} (Windows NT {os_Version}.0; Win64; x86; rv:{fake_rv}.0) mouseTor Relay/A9H8G88F mouseTor/1.0.0'}
                                         r = ProxyRequests('http://' + host_2[1] + "/" + fileget[1])
                                         r.set_headers(h)
                                         data = r.get_with_headers()
@@ -75,7 +75,7 @@ else:
                                         break
                                     else:
                                         os_Version = random.randint(5, 10)
-                                        h = {'User-Agent': f'mouseTor/{version1}.{version2}.{version3} (Windows NT {os_Version}.0; Win{windows_x64_or_not_2}; x{windows_x64_or_not}; rv:{fake_rv}.0) mouseTor Relay/A9H8G88F mouseTor/1.0.0'}
+                                        h = {'User-Agent': f'mouseTor/{version1}.{version2}.{version3} (Windows NT {os_Version}.0; Win64 x86; rv:{fake_rv}.0) mouseTor Relay/A9H8G88F mouseTor/1.0.0'}
                                         r = ProxyRequests('http://' + host_2[1])
                                         r.set_headers(h)
                                         r.get_with_headers()
